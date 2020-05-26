@@ -1,0 +1,28 @@
+n = int(input('enter a number'))
+i=0
+x=0
+y=1
+while(i<n):
+    if(i==0):
+        z=i
+    elif(i==1):
+        z=i
+    else:
+        z=x+y
+        x=y
+        y=z
+    print(z)
+    i+=1
+    
+  #output  
+    enter a number10
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
