@@ -1,0 +1,53 @@
+import csv
+
+def write_into_csv(info_list):
+    with open('employee_info_list.csv', 'a', newline='')as csv_file:
+        writer = csv.writer(csv_file)                                 # writes into csv file
+        if csv_file.tell() == 0:
+            writer.writerow(['name', 'id_number', 'contact_number', 'subject_teaching'])    # gives name to the columns
+        writer.writerow(info_list)
+
+condition = True
+while (condition):        
+    employee_info = input("enter information in following format (name id_number contact_number subject_teaching): ")
+    print("entered info: " + employee_info)
+
+    # split
+    employee_info_list = employee_info.split(' ')
+    print(" enteres split up info is:" + str(employee_info_list)) 
+    
+    write_into_csv(employee_info_list)                                        #calls the function
+
+    condition_check = input('enter yes or no if u want to put more information: ')
+    if(condition_check == 'yes'):
+        condition = True
+    elif(condition_check == 'no'):
+        condition = False
+  
+  
+#output in terminal
+PS C:\Users\Bipasha Rawat\Desktop\python> & "C:/Users/Bipasha Rawat/AppData/Local/Programs/Python/Python38-32/python.exe" "c:/Users/Bipasha Rawat/Desktop/python/school.py"
+enter information in following format (name id_number contact_number subject_teaching): mini 206 9164293875 english
+entered info: mini 206 9164293875 english
+ enteres split up info is:['mini', '206', '9164293875', 'english']
+enter yes or no if u want to put more information: yes
+enter information in following format (name id_number contact_number subject_teaching): shakti 209 9183725643 history
+entered info: shakti 209 9183725643 history
+ enteres split up info is:['shakti', '209', '9183725643', 'history']
+enter yes or no if u want to put more information: yes
+enter information in following format (name id_number contact_number subject_teaching): arun 199 9783644563 physics
+entered info: arun 199 9783644563 physics
+ enteres split up info is:['arun', '199', '9783644563', 'physics']
+enter yes or no if u want to put more information: yes
+enter information in following format (name id_number contact_number subject_teaching): snehlata 200 9764473849 maths
+entered info: snehlata 200 9764473849 maths
+ enteres split up info is:['snehlata', '200', '9764473849', 'maths']
+enter yes or no if u want to put more information: no
+PS C:\Users\Bipasha Rawat\Desktop\python>
+
+#csv file created by name -employee_info_list.csv
+name,id_number,contact_number,subject_teaching
+mini,206,76846573,english
+shakti,209,6453738364,history
+arun,199,83453639376,physics
+snehlata,200,736325363738,maths
