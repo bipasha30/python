@@ -1,0 +1,8 @@
+import requests            #getting wed page content
+from bs4 import Beautifulsoup          
+
+oyo_url = "https://www.oyorooms.com/search?location=Mumbai%2C%20Maharashtra%2C%20India&city=Mumbai&searchType=city&checkin=29%2F05%2F2020&checkout=30%2F05%2F2020&roomConfig%5B%5D=1&guests=1&rooms=1&filters%5Bcity_id%5D=5"
+req = requests.get(oyo_url)
+content = req.content
+
+print(content)
